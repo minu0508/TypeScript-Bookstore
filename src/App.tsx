@@ -1,4 +1,4 @@
-import { Layout } from './components/common/layout/Layout';
+import { Layout } from './components/templates/layout';
 import { Home } from './pages/Home';
 import { BookStoreThemeProvider } from './context/themeContext';
 
