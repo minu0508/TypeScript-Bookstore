@@ -1,39 +1,25 @@
-import { ThemeSwitcher } from '../../atoms/ThemeSwitcher';
 import * as S from './Header.style';
 import MainLogo from '../../../styles/assets/image/imgae_main_logo.jpg';
 import { FaSignInAlt, FaRegUser } from 'react-icons/fa';
-
-const CATEGORY = [
-  {
-    id: null,
-    name: '전체',
-  },
-  {
-    id: 0,
-    name: '동화',
-  },
-  {
-    id: 1,
-    name: '소설',
-  },
-  {
-    id: 2,
-    name: '사회',
-  },
-];
+import { Link } from 'react-router-dom';
+import { useCategory } from '../../../hooks/useCategory';
 
 export const Header = () => {
+  const { category } = useCategory();
+
   return (
     <>
       <S.Header>
         <h1 className="logo">
-          <img src={MainLogo} alt="Book Store" />
+          <Link to={'/'}>
+            <img src={MainLogo} alt="Book Store" />
+          </Link>
         </h1>
         <nav className="category">
           <ul>
-            {CATEGORY.map((item) => (
+            {category.map((item) => (
               <li key={item.id}>
-                <a href={item.id === null ? `/books` : `/books?category_id=${item.id}`}>{item.name}</a>
+                <Link to={item.id === null ? `/books` : `/books?category_id=${item.id}`}>{item.name}</Link>
               </li>
             ))}
           </ul>

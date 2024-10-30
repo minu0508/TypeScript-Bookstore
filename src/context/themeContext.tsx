@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
-import { dark, getTheme, ThemeName } from '../styles/theme';
+import { getTheme, ThemeName } from '../styles/theme';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../styles/global';
 
