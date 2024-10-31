@@ -26,13 +26,18 @@ export const Login = () => {
   } = useForm<SignupProps>();
 
   const onSubmit = async (data: SignupProps) => {
-    login(data).then((res) => {
-      // 상태 변화
-      storeLogin(res.token);
+    login(data).then(
+      (res) => {
+        // 상태 변화
+        storeLogin(res.token);
 
-      showAlert('로그인 성공');
-      navigate('/');
-    });
+        showAlert('로그인 성공');
+        navigate('/');
+      },
+      (error) => {
+        showAlert('로그인 실패');
+      }
+    );
   };
 
   console.log('@@@ isloggedIn: ', isloggedIn);
