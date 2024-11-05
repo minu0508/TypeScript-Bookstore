@@ -40,8 +40,6 @@ export const Login = () => {
     );
   };
 
-  console.log('@@@ isloggedIn: ', isloggedIn);
-
   return (
     <>
       <Title size="large">로그인</Title>
