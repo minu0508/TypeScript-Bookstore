@@ -12,7 +12,7 @@ export const BookItem = ({ book }: BookItemProps) => {
   return (
     <S.BookItemStyle>
       <div className="img">
-        <img src={getImgSrc(book.id)} alt={book.title} />
+        <img src={getImgSrc(book.img)} alt={book.title} />
       </div>
       <div className="content">
         <h2 className="title">{book.title}</h2>
