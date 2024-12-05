@@ -5,6 +5,7 @@ import { getImgSrc } from '../../utils/image';
 import { Title } from '../../components/atoms/Title';
 import { BookDetail as IBookDetail } from '../../models/book.model';
 import { formatDate, formatNumber } from '../../utils/format';
+import { EllipsisBox } from '../../components/atoms/EllipsisBox';
 
 const bookInfoList = [
   {
@@ -67,7 +68,12 @@ export const BookDetail = () => {
           <div className="add-cart">장바구니 넣기</div>
         </div>
       </header>
-      <div className="content"></div>
+      <div className="content">
+        <Title size="medium">상세 설명</Title>
+        <EllipsisBox lineLimit={4}>{book.detail}</EllipsisBox>
+        <Title size="medium">목차</Title>
+        <p className="index">{book.contents}</p>
+      </div>
     </S.BookDetailStyle>
   );
 };
