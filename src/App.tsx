@@ -6,7 +6,8 @@ import { Error } from './pages/Error';
 import { Signup } from './pages/Signup';
 import { ResetPassword } from './pages/ResetPassword';
 import { Login } from './pages/Login';
-import { Books } from './pages/Books';
+import { Books } from './pages/Book/Books';
+import { BookDetail } from './pages/Book/BookDetail';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Login />
+      </Layout>
+    ),
+  },
+  {
+    path: '/book/:bookId',
+    element: (
+      <Layout>
+        <BookDetail />
       </Layout>
     ),
   },

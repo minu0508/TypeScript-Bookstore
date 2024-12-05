@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import { ViewMode } from '../BooksViewSwitcher';
 
-export const BookListStyle = styled.div`
+interface BooksListStyleProps {
+  view: ViewMode;
+}
+
+export const BookListStyle = styled.div<BooksListStyleProps>`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: ${({ view }) => (view === 'grid' ? 'repeat(4, 1fr);' : 'repeat(1, 1fr);')};
   gap: 24px;
 `;

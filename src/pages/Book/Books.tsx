@@ -5,7 +5,7 @@ import { BooksViewSwitcher } from '../../components/atoms/BooksViewSwitcher';
 import { Pagination } from '../../components/atoms/Pagination';
 import { Title } from '../../components/atoms/Title';
 import { useBooks } from '../../hooks/useBooks';
-import * as S from './Books.style';
+import * as S from './Book.style';
 
 export const Books = () => {
   const { books, pagination, isEmpty } = useBooks();

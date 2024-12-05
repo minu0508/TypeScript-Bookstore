@@ -14,3 +14,5 @@ export const BookFillter = styled.div`
   align-items: center;
   padding: 20px 0;
 `;
+
+export const BookDetailStyle = styled.div``;
