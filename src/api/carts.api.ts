@@ -38,3 +38,8 @@ export const fetchCart = async () => {
   const response = await httpClient.get('/carts');
   return response.data;
 };
+
+export const deleteCart = async (cartId: number) => {
+  const response = await httpClient.delete(`/carts/${cartId}`);
+  return response.data;
+};
