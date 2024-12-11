@@ -51,7 +51,7 @@ export const BooksFilter = () => {
               handleCategory(item.id);
             }}
           >
-            {item.name}
+            {item.categoryName}
           </Button>
         ))}
       </div>

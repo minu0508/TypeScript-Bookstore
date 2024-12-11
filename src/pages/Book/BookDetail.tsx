@@ -6,6 +6,8 @@ import { Title } from '../../components/atoms/Title';
 import { BookDetail as IBookDetail } from '../../models/book.model';
 import { formatDate, formatNumber } from '../../utils/format';
 import { EllipsisBox } from '../../components/atoms/EllipsisBox';
+import { LikeButton } from '../../components/atoms/LikeButton';
+import { AddToCart } from '../../components/atoms/AddToCart';
 
 const bookInfoList = [
   {
@@ -43,7 +45,7 @@ const bookInfoList = [
 
 export const BookDetail = () => {
   const { bookId } = useParams();
-  const { book } = useBook(bookId);
+  const { book, likeToggle } = useBook(bookId);
 
   if (!book) return null;
 
@@ -51,7 +53,7 @@ export const BookDetail = () => {
     <S.BookDetailStyle>
       <header className="header">
         <div className="img">
-          <img src={getImgSrc(book.img)} alt={book.title} />
+          <img src={getImgSrc(book.imgNo)} alt={book.title} />
         </div>
         <div className="info">
           <Title size="large" color="text">
@@ -64,8 +66,12 @@ export const BookDetail = () => {
             </dl>
           ))}
           <p className="summary">{book.summary}</p>
-          <div className="like">라이크</div>
-          <div className="add-cart">장바구니 넣기</div>
+          <div className="like">
+            <LikeButton book={book} onClick={likeToggle} />
+          </div>
+          <div className="add-cart">
+            <AddToCart book={book} />
+          </div>
         </div>
       </header>
       <div className="content">

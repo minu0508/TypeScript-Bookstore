@@ -35,7 +35,7 @@ export const useCategory = () => {
   useEffect(() => {
     fetchCategory().then((category) => {
       if (!category) return;
-      const categoryWithAll = [{ id: null, name: '전체' }, ...category];
+      const categoryWithAll = [{ id: null, categoryName: '전체' }, ...category];
       setCategory(categoryWithAll);
       setActive();
     });

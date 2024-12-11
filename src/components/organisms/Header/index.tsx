@@ -21,7 +21,7 @@ export const Header = () => {
           <ul>
             {category.map((item) => (
               <li key={item.id}>
-                <Link to={item.id === null ? `/books` : `/books?category_id=${item.id}`}>{item.name}</Link>
+                <Link to={item.id === null ? `/books` : `/books?category_id=${item.id}`}>{item.categoryName}</Link>
               </li>
             ))}
           </ul>

@@ -1,7 +1,7 @@
 export interface Book {
-  id: number;
+  bid: number;
   title: string;
-  img: number;
+  imgNo: number;
   category_id: number;
   form: string;
   isbn: string;
@@ -17,5 +17,5 @@ export interface Book {
 
 export interface BookDetail extends Book {
   categoryName: string;
-  like: boolean;
+  liked: boolean;
 }

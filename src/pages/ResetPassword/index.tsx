@@ -9,8 +9,9 @@ import { useAlert } from '../../hooks/useAlert';
 import { useState } from 'react';
 
 export interface SignupProps {
-  email: string;
+  userId: string;
   password: string;
+  name: string;
 }
 
 export const ResetPassword = () => {
@@ -45,8 +46,8 @@ export const ResetPassword = () => {
       <S.SignupStyle>
         <form onSubmit={handleSubmit(onSubmit)}>
           <fieldset>
-            <InputText placeholder="이메일" inputType="email" {...register('email', { required: true })} />
-            {errors.email && <p className="error-text">이메일을 입력해주세요.</p>}
+            <InputText placeholder="이메일" inputType="email" {...register('userId', { required: true })} />
+            {errors.userId && <p className="error-text">이메일을 입력해주세요.</p>}
           </fieldset>
           {resetRequested && (
             <fieldset>

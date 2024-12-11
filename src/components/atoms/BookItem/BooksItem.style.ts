@@ -7,6 +7,7 @@ export const BookItemStyle = styled.div<Pick<BookItemProps, 'view'>>`
     flex-direction: ${({ view }) => (view === 'grid' ? 'column' : 'row')};
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     text-decoration: none;
+    height: 400px;
   }
 
   .img {

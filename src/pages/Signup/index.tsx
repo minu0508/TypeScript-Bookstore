@@ -8,8 +8,9 @@ import { signup } from '../../api/auth.api';
 import { useAlert } from '../../hooks/useAlert';
 
 export interface SignupProps {
-  email: string;
+  userId: string;
   password: string;
+  name: string;
 }
 
 export const Signup = () => {
@@ -38,11 +39,15 @@ export const Signup = () => {
       <S.SignupStyle>
         <form onSubmit={handleSubmit(onSubmit)}>
           <fieldset>
-            <InputText placeholder="이메일" inputType="email" {...register('email', { required: true })} />
-            {errors.email && <p className="error-text">이메일을 입력해주세요.</p>}
+            <InputText placeholder="이메일" inputType="email" {...register('userId', { required: true })} />
+            {errors.userId && <p className="error-text">이메일을 입력해주세요.</p>}
           </fieldset>
           <fieldset>
             <InputText placeholder="비밀번호" inputType="password" {...register('password', { required: true })} />
+            {errors.password && <p className="error-text">비밀번호를 입력해주세요.</p>}
+          </fieldset>
+          <fieldset>
+            <InputText placeholder="이름" inputType="text" {...register('name', { required: true })} />
             {errors.password && <p className="error-text">비밀번호를 입력해주세요.</p>}
           </fieldset>
           <fieldset>

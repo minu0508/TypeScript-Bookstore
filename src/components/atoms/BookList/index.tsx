@@ -24,7 +24,7 @@ export const BooksList = ({ books }: BooksListProps) => {
   return (
     <S.BookListStyle view={view}>
       {books?.map((item) => (
-        <BookItem key={item.id} book={item} view={view} />
+        <BookItem key={item.bid} book={item} view={view} />
       ))}
     </S.BookListStyle>
   );

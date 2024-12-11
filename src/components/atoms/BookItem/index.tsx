@@ -14,9 +14,9 @@ export interface BookItemProps {
 export const BookItem = ({ book, view }: BookItemProps) => {
   return (
     <S.BookItemStyle view={view}>
-      <Link to={`/book/${book.id}`}>
+      <Link to={`/book/${book.bid}`}>
         <div className="img">
-          <img src={getImgSrc(book.img)} alt={book.title} />
+          <img src={getImgSrc(book.imgNo)} alt={book.title} />
         </div>
         <div className="content">
           <h2 className="title">{book.title}</h2>
