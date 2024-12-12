@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { CartItem } from '../../components/molecules/CartItem';
 import { Title } from '../../components/atoms/Title';
 import { useCart } from '../../hooks/useCart';
-import { CartStyle } from './Cart.style';
 import { Empty } from '../../components/molecules/CartEmpty';
 import { FaShoppingCart } from 'react-icons/fa';
 import { CartTemplate } from '../../components/templates/CartTemplate';
@@ -65,37 +64,33 @@ export const Cart = () => {
   return (
     <>
       <Title size="large">장바구니</Title>
-      <CartStyle>
+      {!isEmpty && (
         <CartTemplate>
-          {!isEmpty && (
-            <>
-              <div className="content">
-                {carts.map((item) => {
-                  return (
-                    <CartItem
-                      key={item.id}
-                      cart={item}
-                      checkedItems={checkedItems}
-                      onCheck={handleCheckItem}
-                      onDelete={handleDeleteItem}
-                    />
-                  );
-                })}
-              </div>
+          <div className="content">
+            {carts.map((item) => {
+              return (
+                <CartItem
+                  key={item.id}
+                  cart={item}
+                  checkedItems={checkedItems}
+                  onCheck={handleCheckItem}
+                  onDelete={handleDeleteItem}
+                />
+              );
+            })}
+          </div>
 
-              <div className="summary">
-                <CartSummary totalQuantity={totalQuantity} totalPrice={totalPrice} />
-                <Button size="large" scheme="primary" onClick={handleOrder}>
-                  주문 하기
-                </Button>
-              </div>
-            </>
-          )}
-          {isEmpty && (
-            <Empty title="장바구니가 비었습니다." icon={<FaShoppingCart />} description={<>장바구니를 채워보세요.</>} />
-          )}
+          <div className="summary">
+            <CartSummary totalQuantity={totalQuantity} totalPrice={totalPrice} />
+            <Button size="large" scheme="primary" onClick={handleOrder}>
+              주문 하기
+            </Button>
+          </div>
         </CartTemplate>
-      </CartStyle>
+      )}
+      {isEmpty && (
+        <Empty title="장바구니가 비었습니다." icon={<FaShoppingCart />} description={<>장바구니를 채워보세요.</>} />
+      )}
     </>
   );
 };
