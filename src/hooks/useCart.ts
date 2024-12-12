@@ -25,7 +25,11 @@ export const useCart = () => {
 
   const deleteCartItem = (id: number) => {
     deleteCart(id).then(() => {
-      setCarts(carts.filter((cart) => cart.id !== id));
+      setCarts((prevCarts) => {
+        const newCarts = prevCarts.filter((cart) => cart.id !== id);
+        setIsEmpty(newCarts.length === 0);
+        return newCarts;
+      });
     });
   };
 

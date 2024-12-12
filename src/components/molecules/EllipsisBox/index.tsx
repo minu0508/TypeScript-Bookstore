@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as S from './EllipsisBox.style';
-import { Button } from '../Button';
+import { Button } from '../../atoms/Button';
 import { FaAngleDown } from 'react-icons/fa';
 
 interface EllipsisBoxProps {

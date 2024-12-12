@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ViewMode } from '../BooksViewSwitcher';
+import { ViewMode } from '../../molecules/BooksViewSwitcher';
 
 interface BooksListStyleProps {
   view: ViewMode;

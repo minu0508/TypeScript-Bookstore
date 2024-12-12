@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { Button } from '../Button';
+import { Button } from '../../atoms/Button';
 import * as S from './BooksViewSwitcher.style';
 import { FaList, FaTh } from 'react-icons/fa';
 import { QUERYSTRING } from '../../../constants/querystring';

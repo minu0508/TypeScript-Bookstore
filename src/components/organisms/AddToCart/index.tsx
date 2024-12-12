@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BookDetail } from '../../../models/book.model';
-import { Button } from '../Button';
-import { InputText } from '../InputText';
+import { Button } from '../../atoms/Button';
+import { InputText } from '../../atoms/InputText';
 import * as S from './AddToCart.style';
 import { Link } from 'react-router-dom';
 import { useBook } from '../../../hooks/useBook';

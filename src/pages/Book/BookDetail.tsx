@@ -5,9 +5,9 @@ import { getImgSrc } from '../../utils/image';
 import { Title } from '../../components/atoms/Title';
 import { BookDetail as IBookDetail } from '../../models/book.model';
 import { formatDate, formatNumber } from '../../utils/format';
-import { EllipsisBox } from '../../components/atoms/EllipsisBox';
+import { EllipsisBox } from '../../components/molecules/EllipsisBox';
 import { LikeButton } from '../../components/atoms/LikeButton';
-import { AddToCart } from '../../components/atoms/AddToCart';
+import { AddToCart } from '../../components/organisms/AddToCart';
 
 const bookInfoList = [
   {

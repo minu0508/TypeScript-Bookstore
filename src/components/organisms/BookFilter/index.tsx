@@ -7,7 +7,7 @@
  */
 import { QUERYSTRING } from '../../../constants/querystring';
 import { useCategory } from '../../../hooks/useCategory';
-import { Button } from '../Button';
+import { Button } from '../../atoms/Button';
 import * as S from './BooksFilter.style';
 import { useSearchParams } from 'react-router-dom';
 

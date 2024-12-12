@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { Cart } from '../../../models/cart.model';
 import { formatNumber } from '../../../utils/format';
-import { Button } from '../Button';
-import { CheckIconButton } from '../CheckIconButton';
-import { Title } from '../Title';
+import { Button } from '../../atoms/Button';
+import { CheckIconButton } from '../../atoms/CheckIconButton';
+import { Title } from '../../atoms/Title';
 import * as S from './CartItem.style';
 import { useAlert } from '../../../hooks/useAlert';
 
@@ -40,6 +40,7 @@ export const CartItem = ({ cart, checkedItems, onCheck, onDelete }: CartItemProp
           <p className="summary">{cart.summary}</p>
           <p className="price">{formatNumber(cart.price)}원</p>
           <p className="quantity">{cart.quantity}권</p>
+          <p className="price">금액: {formatNumber(cart.price * cart.quantity)}원</p>
         </div>
       </div>
       <Button size="medium" scheme="normal" onClick={handleDelete}>

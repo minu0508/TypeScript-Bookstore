@@ -3,7 +3,7 @@ import { Book } from '../../../models/book.model';
 import { formatNumber } from '../../../utils/format';
 import { getImgSrc } from '../../../utils/image';
 import * as S from './BooksItem.style';
-import { ViewMode } from '../BooksViewSwitcher';
+import { ViewMode } from '../../molecules/BooksViewSwitcher';
 import { Link } from 'react-router-dom';
 
 export interface BookItemProps {

@@ -1,7 +1,7 @@
 import { BooksEmpty } from '../../components/atoms/BookEmpty';
-import { BooksFilter } from '../../components/atoms/BookFilter';
-import { BooksList } from '../../components/atoms/BookList';
-import { BooksViewSwitcher } from '../../components/atoms/BooksViewSwitcher';
+import { BooksFilter } from '../../components/organisms/BookFilter';
+import { BooksList } from '../../components/organisms/BookList';
+import { BooksViewSwitcher } from '../../components/molecules/BooksViewSwitcher';
 import { Pagination } from '../../components/atoms/Pagination';
 import { Title } from '../../components/atoms/Title';
 import { useBooks } from '../../hooks/useBooks';
