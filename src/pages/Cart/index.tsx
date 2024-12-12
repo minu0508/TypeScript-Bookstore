@@ -7,8 +7,14 @@ import { Empty } from '../../components/molecules/CartEmpty';
 import { FaShoppingCart } from 'react-icons/fa';
 import { CartTemplate } from '../../components/templates/CartTemplate';
 import { CartSummary } from '../../components/atoms/CartSummary';
+import { useAlert } from '../../hooks/useAlert';
+import { Button } from '../../components/atoms/Button';
+import { OrderSheet } from '../../models/order.model';
+import { useNavigate } from 'react-router-dom';
 
 export const Cart = () => {
+  const { showAlert, showConfirm } = useAlert();
+  const navigate = useNavigate();
   const { carts, isEmpty, deleteCartItem } = useCart();
   const [checkedItems, setCheckedItems] = useState<number[]>([]);
   const handleCheckItem = (id: number) => {
@@ -26,7 +32,6 @@ export const Cart = () => {
       if (checkedItems.includes(cart.id)) {
         return Number(acc) + Number(cart.quantity);
       }
-      console.log(acc);
       return acc;
     }, 0);
   }, [carts, checkedItems]);
@@ -38,6 +43,24 @@ export const Cart = () => {
       return acc;
     }, 0);
   }, [carts, checkedItems]);
+
+  const handleOrder = () => {
+    if (checkedItems.length === 0) {
+      showAlert('주문할 상품을 선택해 주세요.');
+      return;
+    }
+    const orderData: Omit<OrderSheet, 'delivery'> = {
+      items: checkedItems,
+      totalPrice,
+      totalQuantity,
+      firstBookTitle: carts[0].title,
+    };
+
+    showConfirm('주문 하시겠습니까?', () => {
+      /** order라는 주소로 이동할 때, state도 같이 수신할 수 있게 한다. */
+      navigate('/order', { state: orderData });
+    });
+  };
 
   return (
     <>
@@ -62,6 +85,9 @@ export const Cart = () => {
 
               <div className="summary">
                 <CartSummary totalQuantity={totalQuantity} totalPrice={totalPrice} />
+                <Button size="large" scheme="primary" onClick={handleOrder}>
+                  주문 하기
+                </Button>
               </div>
             </>
           )}

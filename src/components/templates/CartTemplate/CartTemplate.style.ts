@@ -15,5 +15,7 @@ export const CartTemplateStyle = styled.div`
 
   .summary {
     display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 `;

@@ -34,7 +34,9 @@ export const CartItem = ({ cart, checkedItems, onCheck, onDelete }: CartItemProp
   return (
     <S.CartItemStyle>
       <div className="info">
-        <CheckIconButton isChecked={isChecked} onCheck={handleCheck} />
+        <div className="check">
+          <CheckIconButton isChecked={isChecked} onCheck={handleCheck} />
+        </div>
         <div>
           <Title size="medium">{cart.title}</Title>
           <p className="summary">{cart.summary}</p>
