@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Title } from '../../components/atoms/Title';
 import { CartSummary } from '../../components/atoms/CartSummary';
 import { Button } from '../../components/atoms/Button';
@@ -7,12 +7,16 @@ import { InputText } from '../../components/atoms/InputText';
 import { useForm } from 'react-hook-form';
 import { Delivery, OrderSheet } from '../../models/order.model';
 import { FindAddressButton } from '../../components/atoms/FindAddressButton';
+import { useAlert } from '../../hooks/useAlert';
+import { order } from '../../api/order.api';
 
 interface DeliveryForm extends Delivery {
   addressDetail: string;
 }
 export const Order = () => {
+  const { showAlert, showConfirm } = useAlert();
   const location = useLocation();
+  const navigate = useNavigate();
   const orderDataFromCart = location.state;
   const { totalQuantity = 0, totalPrice = 0, firstBookTitle = '' } = orderDataFromCart;
 
@@ -34,7 +38,12 @@ export const Order = () => {
       },
     };
 
-    console.log('orderData: ', orderData);
+    showConfirm('주문을 진행하시겠습니까?', () => {
+      order(orderData).then(() => {
+        showAlert('주문이 완료 처리되었습니다.');
+        navigate('/orderlist');
+      });
+    });
   };
 
   return (
