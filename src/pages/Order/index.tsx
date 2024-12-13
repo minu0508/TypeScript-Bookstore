@@ -6,6 +6,7 @@ import { CartTemplate } from '../../components/templates/CartTemplate';
 import { InputText } from '../../components/atoms/InputText';
 import { useForm } from 'react-hook-form';
 import { Delivery, OrderSheet } from '../../models/order.model';
+import { FindAddressButton } from '../../components/atoms/FindAddressButton';
 
 interface DeliveryForm extends Delivery {
   addressDetail: string;
@@ -13,11 +14,13 @@ interface DeliveryForm extends Delivery {
 export const Order = () => {
   const location = useLocation();
   const orderDataFromCart = location.state;
-  const { totalQuantity, totalPrice, firstBookTitle } = orderDataFromCart;
+  const { totalQuantity = 0, totalPrice = 0, firstBookTitle = '' } = orderDataFromCart;
 
+  console.log(totalQuantity);
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<DeliveryForm>();
 
@@ -49,9 +52,11 @@ export const Order = () => {
                 <div className="input">
                   <InputText inputType="text" {...register('address', { required: true })} />
                 </div>
-                <Button size="medium" scheme="normal">
-                  주소 찾기
-                </Button>
+                <FindAddressButton
+                  onCompleted={(address) => {
+                    setValue('address', address);
+                  }}
+                />
               </fieldset>
               {errors.address && <p className="error-text">주소를 입력해주세요.</p>}
 
