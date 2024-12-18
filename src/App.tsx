@@ -10,6 +10,7 @@ import { Books } from './pages/Book/Books';
 import { BookDetail } from './pages/Book/BookDetail';
 import { Cart } from './pages/Cart';
 import { Order } from './pages/Order';
+import { OrderList } from './pages/OrderList';
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Order />
+      </Layout>
+    ),
+  },
+  {
+    path: '/orderlist',
+    element: (
+      <Layout>
+        <OrderList />
       </Layout>
     ),
   },
