@@ -61,6 +61,7 @@ export const Cart = () => {
     });
   };
 
+  console.log('@@@ carts: ', carts);
   return (
     <>
       <Title size="large">장바구니</Title>
