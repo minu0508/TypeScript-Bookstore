@@ -1,9 +1,9 @@
 import { FaHeart } from 'react-icons/fa';
-import { Book } from '../../../models/book.model';
-import { formatNumber } from '../../../utils/format';
-import { getImgSrc } from '../../../utils/image';
-import * as S from './BooksItem.style';
-import { ViewMode } from '../../molecules/BooksViewSwitcher';
+import { Book } from '@/models/book.model';
+import { formatNumber } from '@/utils/format';
+import { getImgSrc } from '@/utils/image';
+import * as S from '@/components/atoms/BookItem/BooksItem.style';
+import { ViewMode } from '@/components/molecules/BooksViewSwitcher';
 import { Link } from 'react-router-dom';
 
 export interface BookItemProps {
