@@ -7,6 +7,7 @@ export interface Order {
   title: string;
   totalQuantity: number;
   total_money: number;
+  detail?: OrderDetailItem[];
 }
 
 export interface OrderSheet {
@@ -24,13 +25,13 @@ export interface Delivery {
 }
 
 export interface OrderDetailItem {
-  bookId: number;
+  book_bid: number;
   title: string;
   author: string;
-  price: number;
+  each_amount: number;
   quantity: number;
 }
 
-export interface OrderDetailItem extends Order {
+export interface OrderListItem extends Order {
   detail?: OrderDetailItem[];
 }

@@ -16,4 +16,17 @@ export const OrderListTemplateStyle = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.color.border};
     text-align: center;
   }
+
+  .detail {
+    margin: 0;
+    li {
+      list-style: square;
+      text-align: left;
+      div {
+        display: flex;
+        padding: 8px 12px;
+        gap: 8px;
+      }
+    }
+  }
 `;
