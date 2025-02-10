@@ -1,15 +1,15 @@
-import { useMemo, useState } from 'react';
-import { CartItem } from '../../components/molecules/CartItem';
-import { Title } from '../../components/atoms/Title';
-import { useCart } from '../../hooks/useCart';
-import { Empty } from '../../components/molecules/CartEmpty';
-import { FaShoppingCart } from 'react-icons/fa';
-import { CartTemplate } from '../../components/templates/CartTemplate';
-import { CartSummary } from '../../components/atoms/CartSummary';
-import { useAlert } from '../../hooks/useAlert';
-import { Button } from '../../components/atoms/Button';
-import { OrderSheet } from '../../models/order.model';
+import { Title } from '@/components/atoms/Title';
+import { Empty } from '@/components/molecules/CartEmpty';
+import { Button } from '@/components/atoms/Button';
+import { useCart } from '@/hooks/useCart';
+import { useAlert } from '@/hooks/useAlert';
+import { CartItem } from '@/components/molecules/CartItem';
+import { OrderSheet } from '@/models/order.model';
 import { useNavigate } from 'react-router-dom';
+import { CartSummary } from '@/components/atoms/CartSummary';
+import { CartTemplate } from '@/components/templates/CartTemplate';
+import { FaShoppingCart } from 'react-icons/fa';
+import { useMemo, useState } from 'react';
 
 export const Cart = () => {
   const { showAlert, showConfirm } = useAlert();

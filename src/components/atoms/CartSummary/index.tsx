@@ -1,5 +1,5 @@
-import { formatNumber } from '../../../utils/format';
 import * as S from './CartSummary.style';
+import { formatNumber } from '@/utils/format';
 
 interface CartSummaryProps {
   totalQuantity: number;

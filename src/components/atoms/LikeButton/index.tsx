@@ -1,6 +1,6 @@
-import { BookDetail } from '../../../models/book.model';
 import * as S from './LikeButton.style';
 import { FaHeart } from 'react-icons/fa';
+import { BookDetail } from '@/models/book.model';
 
 interface LikeButtonProps {
   book: BookDetail;

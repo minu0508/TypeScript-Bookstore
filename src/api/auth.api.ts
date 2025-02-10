@@ -1,4 +1,4 @@
-import { SignupProps } from '@/pages/Signup';
+import { SignupProps } from '@/pages/Login';
 import { requestHandler } from './http';
 
 export const signup = async (userData: SignupProps) => {

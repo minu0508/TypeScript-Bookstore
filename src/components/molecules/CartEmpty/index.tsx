@@ -1,5 +1,5 @@
 import * as S from './CartEmpty.style';
-import { Title } from '../../atoms/Title';
+import { Title } from '@/components/atoms/Title';
 
 interface EmptyProps {
   icon?: React.ReactNode;

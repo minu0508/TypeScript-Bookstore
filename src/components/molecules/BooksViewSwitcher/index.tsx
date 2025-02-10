@@ -1,9 +1,9 @@
-import { useSearchParams } from 'react-router-dom';
-import { Button } from '../../atoms/Button';
 import * as S from './BooksViewSwitcher.style';
-import { FaList, FaTh } from 'react-icons/fa';
-import { QUERYSTRING } from '../../../constants/querystring';
+import { Button } from '@/components/atoms/Button';
 import { useEffect } from 'react';
+import { QUERYSTRING } from '@/constants/querystring';
+import { FaList, FaTh } from 'react-icons/fa';
+import { useSearchParams } from 'react-router-dom';
 
 const viewOptions = [
   {

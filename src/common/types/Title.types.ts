@@ -1,4 +1,4 @@
-import { ColorKey, HeadingSize } from '../../styles/theme';
+import { ColorKey, HeadingSize } from '@/styles/theme';
 
 export interface TtitleProps {
   children: React.ReactNode;

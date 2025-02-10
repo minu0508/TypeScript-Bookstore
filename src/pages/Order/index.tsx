@@ -1,14 +1,14 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Title } from '../../components/atoms/Title';
-import { CartSummary } from '../../components/atoms/CartSummary';
-import { Button } from '../../components/atoms/Button';
-import { CartTemplate } from '../../components/templates/CartTemplate';
-import { InputText } from '../../components/atoms/InputText';
+import { order } from '@/api/order.api';
+import { Title } from '@/components/atoms/Title';
+import { Button } from '@/components/atoms/Button';
 import { useForm } from 'react-hook-form';
-import { Delivery, OrderSheet } from '../../models/order.model';
-import { FindAddressButton } from '../../components/atoms/FindAddressButton';
-import { useAlert } from '../../hooks/useAlert';
-import { order } from '../../api/order.api';
+import { useAlert } from '@/hooks/useAlert';
+import { InputText } from '@/components/atoms/InputText';
+import { CartSummary } from '@/components/atoms/CartSummary';
+import { CartTemplate } from '@/components/templates/CartTemplate';
+import { FindAddressButton } from '@/components/atoms/FindAddressButton';
+import { Delivery, OrderSheet } from '@/models/order.model';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface DeliveryForm extends Delivery {
   addressDetail: string;

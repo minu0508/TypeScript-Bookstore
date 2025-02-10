@@ -1,11 +1,11 @@
-import { useMemo } from 'react';
-import { Cart } from '../../../models/cart.model';
-import { formatNumber } from '../../../utils/format';
-import { Button } from '../../atoms/Button';
-import { CheckIconButton } from '../../atoms/CheckIconButton';
-import { Title } from '../../atoms/Title';
 import * as S from './CartItem.style';
-import { useAlert } from '../../../hooks/useAlert';
+import { Cart } from '@/models/cart.model';
+import { Title } from '@/components/atoms/Title';
+import { Button } from '@/components/atoms/Button';
+import { useMemo } from 'react';
+import { useAlert } from '@/hooks/useAlert';
+import { formatNumber } from '@/utils/format';
+import { CheckIconButton } from '@/components/atoms/CheckIconButton';
 
 interface CartItemProps {
   cart: Cart;

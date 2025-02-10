@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { BookDetail } from '../../../models/book.model';
-import { Button } from '../../atoms/Button';
-import { InputText } from '../../atoms/InputText';
 import * as S from './AddToCart.style';
 import { Link } from 'react-router-dom';
-import { useBook } from '../../../hooks/useBook';
+import { Button } from '@/components/atoms/Button';
+import { useBook } from '@/hooks/useBook';
+import { useState } from 'react';
+import { InputText } from '@/components/atoms/InputText';
+import { BookDetail } from '@/models/book.model';
 
 interface CartProps {
   book: BookDetail;

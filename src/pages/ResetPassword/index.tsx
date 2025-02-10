@@ -1,12 +1,10 @@
-import { Title } from '../../components/atoms/Title';
-import { InputText } from '../../components/atoms/InputText';
-import { Button } from '../../components/atoms/Button';
-import { Link, useNavigate } from 'react-router-dom';
-import * as S from '../Signup/Signup.style';
+import * as S from '@/pages/Signup/Signup.style';
+import { Link } from 'react-router-dom';
+import { Title } from '@/components/atoms/Title';
+import { Button } from '@/components/atoms/Button';
+import { useAuth } from '@/hooks/useAuth';
 import { useForm } from 'react-hook-form';
-import { resetPassword, resetRequest } from '../../api/auth.api';
-import { useAlert } from '../../hooks/useAlert';
-import { useState } from 'react';
+import { InputText } from '@/components/atoms/InputText';
 
 export interface SignupProps {
   userId: string;
@@ -15,9 +13,7 @@ export interface SignupProps {
 }
 
 export const ResetPassword = () => {
-  const navigate = useNavigate();
-  const { showAlert } = useAlert();
-  const [resetRequested, setResetRequested] = useState(false);
+  const { userResetPassword, userResetRequest, resetRequested } = useAuth();
 
   const {
     register,
@@ -26,18 +22,7 @@ export const ResetPassword = () => {
   } = useForm<SignupProps>();
 
   const onSubmit = async (data: SignupProps) => {
-    if (resetRequested) {
-      // 초기화 함수 호출
-      resetPassword(data).then(() => {
-        showAlert('비밀번호 초기화 성공');
-        navigate('/login');
-      });
-    } else {
-      // 요청
-      resetRequest(data).then(() => {
-        setResetRequested(true);
-      });
-    }
+    resetRequested ? userResetPassword(data) : userResetRequest(data);
   };
 
   return (

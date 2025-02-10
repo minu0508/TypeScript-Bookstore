@@ -1,5 +1,5 @@
-import { FaRegCheckCircle, FaRegCircle } from 'react-icons/fa';
 import * as S from './CheckIconButton.style';
+import { FaRegCheckCircle, FaRegCircle } from 'react-icons/fa';
 
 interface CheckIconButtonProps {
   isChecked: boolean;

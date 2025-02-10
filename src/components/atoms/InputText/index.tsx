@@ -1,5 +1,5 @@
-import React, { ForwardedRef } from 'react';
 import * as S from './InputText.style';
+import React, { ForwardedRef } from 'react';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;

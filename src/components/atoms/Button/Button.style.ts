@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ButtonProps } from '../../../common/types/Button.types';
+import { ButtonProps } from '@/common/types/Button.types';
 
 export const ButtonStyle = styled.button<Omit<ButtonProps, 'children'>>`
   font-size: ${({ theme, size }) => theme.button[size].fontSize};

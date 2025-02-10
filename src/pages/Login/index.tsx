@@ -1,12 +1,10 @@
-import { Title } from '../../components/atoms/Title';
-import { InputText } from '../../components/atoms/InputText';
-import { Button } from '../../components/atoms/Button';
-import { Link, useNavigate } from 'react-router-dom';
-import * as S from '../Signup/Signup.style';
+import * as S from '@/pages/Signup/Signup.style';
+import { Link } from 'react-router-dom';
+import { Title } from '@/components/atoms/Title';
+import { Button } from '@/components/atoms/Button';
 import { useForm } from 'react-hook-form';
-import { login } from '../../api/auth.api';
-import { useAlert } from '../../hooks/useAlert';
-import { useAuthStore } from '../../store/authStore';
+import { useAuth } from '@/hooks/useAuth';
+import { InputText } from '@/components/atoms/InputText';
 
 export interface SignupProps {
   userId: string;
@@ -15,10 +13,7 @@ export interface SignupProps {
 }
 
 export const Login = () => {
-  const navigate = useNavigate();
-  const { showAlert } = useAlert();
-
-  const { isloggedIn, storeLogin, storeLogout } = useAuthStore();
+  const { userLogin } = useAuth();
 
   const {
     register,
@@ -27,18 +22,7 @@ export const Login = () => {
   } = useForm<SignupProps>();
 
   const onSubmit = async (data: SignupProps) => {
-    login(data).then(
-      (res) => {
-        // 상태 변화
-        storeLogin(res.token);
-
-        showAlert('로그인 성공');
-        navigate('/');
-      },
-      (error) => {
-        showAlert('로그인 실패');
-      }
-    );
+    userLogin(data);
   };
 
   return (

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { Button } from '../Button';
 import * as S from './FindAddressButton.style';
+import { Button } from '@/components/atoms/Button';
+import { useEffect, useState } from 'react';
 
 interface FindAddressButtonProps {
   onCompleted: (address: string) => void;

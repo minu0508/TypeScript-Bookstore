@@ -5,10 +5,10 @@
  * - 검색 엔진 최적화 유리
  * - 마케팅 측면에서 데이터 추적 및 분석 좋음
  */
-import { QUERYSTRING } from '../../../constants/querystring';
-import { useCategory } from '../../../hooks/useCategory';
-import { Button } from '../../atoms/Button';
 import * as S from './BooksFilter.style';
+import { Button } from '@/components/atoms/Button';
+import { QUERYSTRING } from '@/constants/querystring';
+import { useCategory } from '@/hooks/useCategory';
 import { useSearchParams } from 'react-router-dom';
 
 export const BooksFilter = () => {

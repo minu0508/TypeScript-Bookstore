@@ -1,6 +1,6 @@
-import { FaSmileWink } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { Empty } from '../../molecules/CartEmpty';
+import { Empty } from '@/components/molecules/CartEmpty';
+import { FaSmileWink } from 'react-icons/fa';
 
 export const BooksEmpty = () => {
   return (

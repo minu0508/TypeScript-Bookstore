@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
 import { ThemeName } from './theme';
+import { createGlobalStyle } from 'styled-components';
 
 interface Props {
   themeName: ThemeName;

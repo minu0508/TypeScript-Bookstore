@@ -1,4 +1,4 @@
-import { ButtonScheme, ButtonSize } from '../../styles/theme';
+import { ButtonScheme, ButtonSize } from '@/styles/theme';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;

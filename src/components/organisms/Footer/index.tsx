@@ -1,5 +1,5 @@
-import MainLogo from '../../../styles/assets/image/imgae_main_logo.jpg';
 import * as S from './Footer.style';
+import MainLogo from '@/styles/assets/image/imgae_main_logo.jpg';
 
 export const Footer = () => {
   return (

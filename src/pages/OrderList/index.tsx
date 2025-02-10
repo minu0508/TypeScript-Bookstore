@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from '../../components/atoms/Button';
-import { Title } from '../../components/atoms/Title';
-import { OrderListTemplate } from '../../components/templates/OrderListTemplate';
-import { useOrders } from '../../hooks/useOrders';
-import { formatDate, formatNumber } from '../../utils/format';
+import { Title } from '@/components/atoms/Title';
+import { Button } from '@/components/atoms/Button';
+import { useOrders } from '@/hooks/useOrders';
+import { OrderListTemplate } from '@/components/templates/OrderListTemplate';
+import { formatDate, formatNumber } from '@/utils/format';
 
 export const OrderList = () => {
   const { orders, selectedItemId, selectOrderItem } = useOrders();

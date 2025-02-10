@@ -1,21 +1,14 @@
-import { Title } from '../../components/atoms/Title';
-import { InputText } from '../../components/atoms/InputText';
-import { Button } from '../../components/atoms/Button';
-import { Link, useNavigate } from 'react-router-dom';
-import * as S from './Signup.style';
+import * as S from '@/pages/Signup/Signup.style';
+import { Link } from 'react-router-dom';
+import { Title } from '@/components/atoms/Title';
+import { Button } from '@/components/atoms/Button';
+import { useAuth } from '@/hooks/useAuth';
 import { useForm } from 'react-hook-form';
-import { signup } from '../../api/auth.api';
-import { useAlert } from '../../hooks/useAlert';
-
-export interface SignupProps {
-  userId: string;
-  password: string;
-  name: string;
-}
+import { InputText } from '@/components/atoms/InputText';
+import { SignupProps } from '@/pages/Login';
 
 export const Signup = () => {
-  const navigate = useNavigate();
-  const { showAlert } = useAlert();
+  const { userSignup } = useAuth();
 
   const {
     register,
@@ -24,13 +17,7 @@ export const Signup = () => {
   } = useForm<SignupProps>();
 
   const onSubmit = async (data: SignupProps) => {
-    try {
-      await signup(data);
-      showAlert('회원가입 성공');
-      navigate('/login');
-    } catch (error) {
-      window.alert('회원가입 실패, 서버 확인해 주세요.');
-    }
+    userSignup(data);
   };
 
   return (

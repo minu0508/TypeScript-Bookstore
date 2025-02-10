@@ -1,6 +1,6 @@
-import { Footer } from '../../organisms/Footer';
-import { Header } from '../../organisms/Header';
 import * as S from './layout.style';
+import { Footer } from '@/components/organisms/Footer';
+import { Header } from '@/components/organisms/Header';
 
 interface LayoutProps {
   children: React.ReactNode;

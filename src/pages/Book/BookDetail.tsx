@@ -1,13 +1,13 @@
-import { Link, useParams } from 'react-router-dom';
 import * as S from './Book.style';
-import { useBook } from '../../hooks/useBook';
-import { getImgSrc } from '../../utils/image';
-import { Title } from '../../components/atoms/Title';
-import { BookDetail as IBookDetail } from '../../models/book.model';
-import { formatDate, formatNumber } from '../../utils/format';
-import { EllipsisBox } from '../../components/molecules/EllipsisBox';
-import { LikeButton } from '../../components/atoms/LikeButton';
-import { AddToCart } from '../../components/organisms/AddToCart';
+import { Title } from '@/components/atoms/Title';
+import { useBook } from '@/hooks/useBook';
+import { getImgSrc } from '@/utils/image';
+import { AddToCart } from '@/components/organisms/AddToCart';
+import { LikeButton } from '@/components/atoms/LikeButton';
+import { EllipsisBox } from '@/components/molecules/EllipsisBox';
+import { Link, useParams } from 'react-router-dom';
+import { formatDate, formatNumber } from '@/utils/format';
+import { BookDetail as IBookDetail } from '@/models/book.model';
 
 const bookInfoList = [
   {

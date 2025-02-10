@@ -1,10 +1,10 @@
-import { FaHeart } from 'react-icons/fa';
-import { Book } from '@/models/book.model';
-import { formatNumber } from '@/utils/format';
-import { getImgSrc } from '@/utils/image';
 import * as S from '@/components/atoms/BookItem/BooksItem.style';
-import { ViewMode } from '@/components/molecules/BooksViewSwitcher';
 import { Link } from 'react-router-dom';
+import { Book } from '@/models/book.model';
+import { FaHeart } from 'react-icons/fa';
+import { ViewMode } from '@/components/molecules/BooksViewSwitcher';
+import { getImgSrc } from '@/utils/image';
+import { formatNumber } from '@/utils/format';
 
 export interface BookItemProps {
   book: Book;
