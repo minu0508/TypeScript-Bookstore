@@ -6,9 +6,17 @@ import { BooksEmpty } from '@/components/atoms/BookEmpty';
 import { Pagination } from '@/components/atoms/Pagination';
 import { BooksFilter } from '@/components/organisms/BookFilter';
 import { BooksViewSwitcher } from '@/components/molecules/BooksViewSwitcher';
+import { Loading } from '@/components/atoms/Loading';
 
 export const Books = () => {
   const { books, pagination, isEmpty, isBooksLoading } = useBooks();
+
+  if (isEmpty) {
+    return <BooksEmpty />;
+  }
+  if (!books || !pagination || isBooksLoading) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -18,9 +26,8 @@ export const Books = () => {
           <BooksFilter />
           <BooksViewSwitcher />
         </S.BookFillter>
-        {!isEmpty && books && <BooksList books={books} />}
-        {isEmpty && <BooksEmpty />}
-        {!isEmpty && pagination && <Pagination pagination={pagination} />}
+        <BooksList books={books} />
+        <Pagination pagination={pagination} />
       </S.BookStyle>
     </>
   );
