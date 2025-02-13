@@ -8,7 +8,7 @@ import { BooksFilter } from '@/components/organisms/BookFilter';
 import { BooksViewSwitcher } from '@/components/molecules/BooksViewSwitcher';
 
 export const Books = () => {
-  const { books, pagination, isEmpty } = useBooks();
+  const { books, pagination, isEmpty, isBooksLoading } = useBooks();
 
   return (
     <>
@@ -18,9 +18,9 @@ export const Books = () => {
           <BooksFilter />
           <BooksViewSwitcher />
         </S.BookFillter>
-        {!isEmpty && <BooksList books={books} />}
+        {!isEmpty && books && <BooksList books={books} />}
         {isEmpty && <BooksEmpty />}
-        {!isEmpty && <Pagination pagination={pagination} />}
+        {!isEmpty && pagination && <Pagination pagination={pagination} />}
       </S.BookStyle>
     </>
   );

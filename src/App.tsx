@@ -9,8 +9,10 @@ import { Layout } from './components/templates/layout';
 import { OrderList } from './pages/OrderList';
 import { BookDetail } from './pages/Book/BookDetail';
 import { ResetPassword } from './pages/ResetPassword';
+import { QueryClientProvider } from 'react-query';
 import { BookStoreThemeProvider } from './context/themeContext';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { queryClient } from './api/queryClient';
 
 const routeList = [
   {
@@ -65,9 +67,11 @@ const router = createBrowserRouter(newRouteList);
 
 function App() {
   return (
-    <BookStoreThemeProvider>
-      <RouterProvider router={router} />
-    </BookStoreThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <BookStoreThemeProvider>
+        <RouterProvider router={router} />
+      </BookStoreThemeProvider>
+    </QueryClientProvider>
   );
 }
 
